@@ -1,5 +1,6 @@
 # Zerodha
 **HOME PAGE**
-![Demo Image](Zerodha/zerodaimg.png)
+![Home Page](zerodaimg.png)
+
 
 
