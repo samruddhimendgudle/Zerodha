@@ -6,9 +6,44 @@
 .header{
 display: flex;
 justify-content: space-between;
-border: 2px solid black;
-padding: 0 20px;
+padding: 0 100px;
+align-items: center;
+height: 90px;
+border-bottom: #ebe9e9 1px solid;
 }
 .header img{
-    width: 100px;
+    width: 160px;
+}
+.header-right{
+    display: flex;
+    gap: 20px;
+}
+.header-right a{
+    text-decoration: none;
+     color: #666;
+    font-size: 1.3rem;
+    
+}
+.hero-section{
+    text-align: center;
+    margin-top: 50px;
+}
+.hero-section img{
+    width: 900px;
+}
+.hero-section h1{
+    margin-bottom: 30px;
+
+}
+.hero-section p{
+    margin-bottom: 30px;
+}
+.hero-section a{
+    background-color: #387ed1;
+    color: #fff;
+    padding:10px 20px;
+    border: 1px solid (0,0,0,0);
+    border-radius: 3px;
+    font-size: 20px;
+    text-decoration: none;
 }
