@@ -1,0 +1,36 @@
+#css units
+relative and absolute
+px cm mm inch are absolute
+vh vw em rem are relative
+em compund withparent element
+rem root element
+html{
+
+}
+:root{
+
+}
+
+#css variables
+container to store value and we use it many times
+inroot declare primary colour
+:root{
+    --primary-color:#colorname
+}
+h1{
+    color:var(--primary-color);
+}
+we can implement light and dark theme using varible
+
+@media (preders-color-scheme:dark){
+    :root{
+        --bg-color:black;
+        --text-color:white
+    }
+}
+@media (preders-color-scheme:light){
+    :root{
+        --bg-color:white;
+        --text-color:black
+    }
+}
