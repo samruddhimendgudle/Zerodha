@@ -34,3 +34,13 @@ we can implement light and dark theme using varible
         --text-color:black
     }
 }
+
+#responsive
+body{
+    background-color:blue;
+}
+@media(width <=640){
+    body{
+        background-color:red;
+    }
+}
