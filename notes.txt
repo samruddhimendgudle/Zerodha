@@ -18,6 +18,7 @@ inroot declare primary colour
     --primary-color:#colorname
 }
 h1{
+
     color:var(--primary-color);
 }
 we can implement light and dark theme using varible
@@ -28,13 +29,12 @@ we can implement light and dark theme using varible
         --text-color:white
     }
 }
-@media (preders-color-scheme:light){
+@media (prefers-color-scheme:light){
     :root{
         --bg-color:white;
         --text-color:black
     }
 }
-
 #responsive
 body{
     background-color:blue;
@@ -44,3 +44,15 @@ body{
         background-color:red;
     }
 }
+
+
+z-index:controls order used to show element in front and back jitna jyada z index utna element upar dikhai dega
+
+to place one element on other you have to use position absolute
+its very imp to write position relative on parent
+position sticky-
+position static
+position relative -same as static top left right bottom z index
+position fixed-to fixed the elem on the screen at specific position
+position absolute
+ tranision duration for hover 

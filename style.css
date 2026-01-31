@@ -13,6 +13,7 @@
 }
 .header img {
   width: 160px;
+  /*position: fixed; it will fix its osition and width or height will go to hte original size*/
 }
 .header-right {
   display: flex;
