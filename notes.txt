@@ -1,58 +1,270 @@
-#css units
-relative and absolute
-px cm mm inch are absolute
-vh vw em rem are relative
-em compund withparent element
-rem root element
-html{
+CSS Units, Variables, Responsive Design & Positioning — Notes
+1️⃣ CSS Units
 
-}
-:root{
+CSS units define size, spacing, and layout.
 
-}
+🔹 Absolute Units (Fixed size)
 
-#css variables
-container to store value and we use it many times
-inroot declare primary colour
-:root{
-    --primary-color:#colorname
-}
-h1{
+These do not change based on screen or parent.
 
-    color:var(--primary-color);
-}
-we can implement light and dark theme using varible
+px – pixels (most commonly used)
 
-@media (preders-color-scheme:dark){
-    :root{
-        --bg-color:black;
-        --text-color:white
-    }
+cm – centimeters
+
+mm – millimeters
+
+in – inches
+
+📌 Use case: When exact size is required (icons, borders)
+❌ Not recommended for responsive design
+
+🔹 Relative Units (Flexible size)
+
+These depend on screen size, parent, or root element.
+
+Unit	Meaning
+vh	Viewport height (1vh = 1% of screen height)
+vw	Viewport width (1vw = 1% of screen width)
+em	Relative to parent element’s font-size
+rem	Relative to root element (html) font-size
+🔸 em vs rem (Important ⭐)
+.parent {
+  font-size: 20px;
 }
-@media (prefers-color-scheme:light){
-    :root{
-        --bg-color:white;
-        --text-color:black
-    }
-}
-#responsive
-body{
-    background-color:blue;
-}
-@media(width <=640){
-    body{
-        background-color:red;
-    }
+.child {
+  font-size: 1.5em;  /* 30px (20 × 1.5) */
 }
 
 
-z-index:controls order used to show element in front and back jitna jyada z index utna element upar dikhai dega
+🔹 em compounds (keeps multiplying with parent)
+🔹 Can cause unexpected sizes in deep nesting
 
-to place one element on other you have to use position absolute
-its very imp to write position relative on parent
-position sticky-
-position static
-position relative -same as static top left right bottom z index
-position fixed-to fixed the elem on the screen at specific position
-position absolute
- tranision duration for hover 
+html {
+  font-size: 16px;
+}
+p {
+  font-size: 1.5rem; /* 24px */
+}
+
+
+✔ rem is stable and predictable
+✔ Best for responsive & scalable layouts
+
+2️⃣ Root Element (html vs :root)
+html {
+  font-size: 16px;
+}
+
+:root {
+  --primary-color: blue;
+}
+
+
+🔹 html → root HTML element
+🔹 :root → CSS pseudo-class (higher priority than html)
+✔ Best place to define CSS variables
+
+3️⃣ CSS Variables (Custom Properties)
+🔹 Why CSS Variables?
+
+Store values in one place
+
+Reuse multiple times
+
+Easy theme switching (Light/Dark)
+
+🔹 Declaration
+:root {
+  --primary-color: #3498db;
+}
+
+🔹 Usage
+h1 {
+  color: var(--primary-color);
+}
+
+
+📌 Benefits
+
+Cleaner code
+
+Easy maintenance
+
+Dynamic theming
+
+4️⃣ Light & Dark Theme using CSS Variables
+:root {
+  --bg-color: white;
+  --text-color: black;
+}
+
+🌙 Dark Mode
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: black;
+    --text-color: white;
+  }
+}
+
+☀ Light Mode
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-color: white;
+    --text-color: black;
+  }
+}
+
+Apply Variables
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+
+✔ Automatically adapts to system theme
+
+5️⃣ Responsive Design using Media Queries
+Example
+body {
+  background-color: blue;
+}
+
+@media (width <= 640px) {
+  body {
+    background-color: red;
+  }
+}
+
+
+📌 Meaning:
+
+Desktop → Blue
+
+Mobile (≤640px) → Red
+
+🔹 Common Breakpoints:
+
+Mobile: <= 640px
+
+Tablet: <= 768px
+
+Laptop: <= 1024px
+
+6️⃣ z-index
+🔹 What is z-index?
+
+Controls stack order (front/back) of elements.
+
+.box1 {
+  z-index: 1;
+}
+.box2 {
+  z-index: 10;
+}
+
+
+✔ Higher z-index → appears on top
+
+⚠ Works only with positioned elements
+(relative, absolute, fixed, sticky)
+
+7️⃣ CSS Position Property
+🔹 position: static (default)
+
+Normal flow
+
+top, left not applied
+
+🔹 position: relative
+
+Same place as static
+
+Allows top, left, right, bottom
+
+Does NOT leave document flow
+
+div {
+  position: relative;
+  top: 10px;
+}
+
+
+📌 Used as parent reference for absolute elements
+
+🔹 position: absolute ⭐
+
+Removed from document flow
+
+Positioned relative to nearest positioned parent
+
+.parent {
+  position: relative;
+}
+.child {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+
+⚠ Parent must have position: relative
+
+🔹 position: fixed
+
+Fixed to screen
+
+Does not move on scroll
+
+📌 Example: Navbar, chat icon
+
+.nav {
+  position: fixed;
+  top: 0;
+}
+
+🔹 position: sticky
+
+Acts like relative
+
+Becomes fixed after scroll
+
+header {
+  position: sticky;
+  top: 0;
+}
+
+
+📌 Used for section headers
+
+8️⃣ CSS Transition (Smooth Hover Effects)
+🔹 Why Transition?
+
+Adds smooth animation instead of sudden change.
+
+button {
+  background-color: blue;
+  transition: background-color 0.3s ease;
+}
+button:hover {
+  background-color: red;
+}
+
+🔹 Transition Properties
+transition: property duration timing-function delay;
+
+
+Example:
+
+transition: all 0.4s ease-in-out;
+
+✅ Interview Tips
+
+Prefer rem over px
+
+Use :root for variables
+
+Always set parent position: relative when using absolute
+
+z-index works only with positioned elements
+
+CSS variables + media queries = theming
