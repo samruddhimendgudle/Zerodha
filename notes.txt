@@ -1,3 +1,6 @@
+shortcut 
+window . for emoji
+
 CSS Units, Variables, Responsive Design & Positioning — Notes
 1️⃣ CSS Units
 
@@ -268,3 +271,23 @@ Always set parent position: relative when using absolute
 z-index works only with positioned elements
 
 CSS variables + media queries = theming
+
+in descendant selector all element get changed when you apply to the parent (child child of xhild xhild of child of child)
+if you want to change the parent element use child selector write like .container>p{}
+general sibling selector (~)                  next sibling selector (+)
+p ~h1{} all h1 after para                     p +h1{}only next h1 afterpara
+
+#pseudo Selectors
+pseudo class uses:                        pseudo elements uses ::
+eg :root,:hover                           1)marker 2)before 3)after
+state target classes
+1)hover
+2)focus
+3)blur
+4)checked
+5)visited
+6)first-child
+7)last-child
+8)nth-child
+single colon represents pseudo class
+doble colon represents pseudo element
