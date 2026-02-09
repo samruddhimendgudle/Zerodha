@@ -291,3 +291,12 @@ state target classes
 8)nth-child
 single colon represents pseudo class
 doble colon represents pseudo element
+
+
+you should be able to build one good website like zerodha canva
+you should be able to do html code 
+css Important fundamentals
+1  Selectors
+2  cascading
+3  Box Model
+4  felx-box(justofy content,align-items)
