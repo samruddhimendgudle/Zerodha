@@ -9,3 +9,12 @@
     <h1>hiiiiiii</h1>
 </body>
 </html>
+
+
+<!-- function createandAddElement() {
+    const newElement = document.createElement('p');
+    newElement.textContent = 'This is a new paragraph.';
+    document.body.appendChild(newElement);
+} -->
+in appendChild() method, we can only add one element at a time, and it does not allow for strings to be added directly. In contrast,
+in append() method, we can add multiple elements at once, and it can also accept strings, which will be added as text nodes. In contrast, the appendChild() method only accepts a single node and does not allow for strings to be added directly. Additionally, append() does not return a value, while appendChild() returns the appended node.
